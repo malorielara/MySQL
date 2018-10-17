@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/malorielara/MySQL/issues"
   },
-  "homepage": "https://github.com/malorielara/MySQL#readme"
+  "homepage": "https://github.com/malorielara/MySQL#readme",
+  "dependencies": {
+    "inquirer": "^6.2.0"
+  }
 }

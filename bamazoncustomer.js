@@ -11,7 +11,6 @@ let connection = mysql.createConnection({
 });
 
 function displayAll() {
-    
     connection.query('SELECT * FROM Products', function (error, response) {
         if (error) {
             console.log(error)

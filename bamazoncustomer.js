@@ -27,6 +27,8 @@ function displayAll() {
             [response[i].ItemID, response[i].ProductName, response[i].DepartmentName, response[i].Price, response[i].StockQuantity]
         );
     }
+    console.log(dispTable.toString());
+    possiblePurchase();
 
     });
 };

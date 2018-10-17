@@ -11,24 +11,29 @@ let connection = mysql.createConnection({
 });
 
 function displayAll() {
-
+    
     connection.query('SELECT * FROM Products', function (error, response) {
         if (error) {
             console.log(error)
         };
 
-    let dispTable = new Table ({
-        head: ['Item ID', 'Product Name', 'Category', 'Price', 'Quantity'],
-        colWidths: [10, 30, 18, 10, 14]
-    });
+        let dispTable = new Table({
+            head: ['Item ID', 'Product Name', 'Category', 'Price', 'Quantity'],
+            colWidths: [10, 30, 18, 10, 14]
+        });
 
-    for (i = 0; i < response.length; i++) {
-        dispTable.push(
-            [response[i].ItemID, response[i].ProductName, response[i].DepartmentName, response[i].Price, response[i].StockQuantity]
-        );
-    }
-    console.log(dispTable.toString());
-    possiblePurchase();
+        for (i = 0; i < response.length; i++) {
+            dispTable.push(
+                [response[i].ItemID, response[i].ProductName, response[i].DepartmentName, response[i].Price, response[i].StockQuantity]
+            );
+        }
+        console.log(dispTable.toString());
+        possiblePurchase();
 
     });
+};
+
+function inquireForPurchase() {
+
+
 };

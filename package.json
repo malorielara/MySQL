@@ -1,0 +1,19 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bamazoncustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malorielara/MySQL.git"
+  },
+  "author": "malorie lara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malorielara/MySQL/issues"
+  },
+  "homepage": "https://github.com/malorielara/MySQL#readme"
+}

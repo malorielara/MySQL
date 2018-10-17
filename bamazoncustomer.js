@@ -49,5 +49,12 @@ function possiblePurchase() {
         let IDwant = answers.ID;
         purchaseFromDatabase(IDwant, qtywant);
     });
+};
 
+function purchaseFromDatabase(ID, qtyneed) {
+    connection.query('SELECT * FROM Products WHERE ItemID = ' + ID, function (error, response) {
+        if (error) {
+            console.log(error)
+        };
+    });
 };

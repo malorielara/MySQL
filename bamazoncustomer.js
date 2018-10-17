@@ -32,7 +32,22 @@ function displayAll() {
     });
 };
 
-function inquireForPurchase() {
+function possiblePurchase() {
+    inquirer.prompt([
+        {
+            name: "ID",
+            type: "input",
+            message: "What is the ID number for the item you would like to purchase?"
+        }, {
+            name: 'Quantity',
+            type: 'input',
+            message: "Quantity?"
+        },
 
+    ]).then(function (answers) {
+        let qtywant = answers.Quantity;
+        let IDwant = answers.ID;
+        purchaseFromDatabase(IDwant, qtywant);
+    });
 
 };

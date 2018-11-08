@@ -33,8 +33,7 @@ function displayAll() {
 };
 
 function possiblePurchase() {
-    inquirer.prompt([
-        {
+    inquirer.prompt([{
             name: "ID",
             type: "input",
             message: "What is the ID number for the item you would like to purchase?"
@@ -56,5 +55,18 @@ function purchaseFromDatabase(ID, qtyneed) {
         if (error) {
             console.log(error)
         };
+
+        if (quantityNeeded <= response[0].StockQuantity) {
+            let totalCost = response[0].Price * qtyneed;
+            console.log("Available!");
+            console.log("The total cost for " + qtyneed + " " + response[0].ProductName + " is " + totalCost + ".");
+
+            connection.query('UPDATE Products SET StockQuantity = StockQuantity - ' + quantityNeeded + ' WHERE ItemID = ' + ID);
+
+        } else {
+            console.log("Our apologies. We don't have enough " + response[0].ProductName + " to fulfill your order.");
+        };
+        displayAll();
     });
 };
+displayAll();
